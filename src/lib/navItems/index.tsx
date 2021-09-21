@@ -2,7 +2,7 @@ import React from 'react'
 import HomeIcon from '@material-ui/icons/Home'
 import NewReleasesIcon from '@material-ui/icons/NewReleases'
 import StarsIcon from '@material-ui/icons/Stars'
-import GradeIcon from '@material-ui/icons/Grade'
+// import GradeIcon from '@material-ui/icons/Grade'
 import CategoryIcon from '@material-ui/icons/Category'
 
 const navItems = {
@@ -12,12 +12,12 @@ const navItems = {
     path: '/',
     icon: <HomeIcon />,
   },
-  topFilms: {
-    label: 'Top Films',
-    header: 'Top Rated Films',
-    path: '/top-films',
-    icon: <GradeIcon />,
-  },
+  // topFilms: {
+  //   label: 'Top Films',
+  //   header: 'Top Rated Films',
+  //   path: '/top-films',
+  //   icon: <GradeIcon />,
+  // },
   genres: {
     label: 'Genres',
     header: 'Films By Genre',

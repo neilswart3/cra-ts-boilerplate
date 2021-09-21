@@ -7,13 +7,13 @@ export enum genresTypes {
 }
 
 export interface GenresState {
-  genres: Genre[]
+  data: Genre[]
   error: null | string
   loading: boolean
 }
 
 export interface FetchGenresSuccessPayload {
-  genres: Genre[]
+  data: Genre[]
 }
 
 export interface FetchGenresFailurePayload {

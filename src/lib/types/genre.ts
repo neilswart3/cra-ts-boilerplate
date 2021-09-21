@@ -1,3 +1,7 @@
-export default interface Genre {
+export interface Genre {
   genre: string
+}
+
+export type GenreWithId = Genre & {
+  id: number
 }

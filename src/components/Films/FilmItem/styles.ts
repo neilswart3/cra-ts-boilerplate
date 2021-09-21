@@ -1,8 +1,8 @@
 import styled from 'styled-components'
 import { GridButton } from 'src/modules'
 
-const GenreItem = styled(GridButton)``
+const FilmItem = styled(GridButton)``
 
-const Styled = { GenreItem }
+const Styled = { FilmItem }
 
 export default Styled

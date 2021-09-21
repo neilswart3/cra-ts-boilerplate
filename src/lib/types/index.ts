@@ -1,1 +1,2 @@
-export type { default as Genre } from './genre'
+export type { Genre, GenreWithId } from './genre'
+export type { Film, FilmFull } from './film'

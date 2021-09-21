@@ -1,32 +1,32 @@
 import {
-  GenresActions,
-  GenresState,
-  genresTypes,
-} from 'src/store/actions/genres/types'
+  FilmsState,
+  FilmsActions,
+  filmsTypes,
+} from 'src/store/actions/films/types'
 
-const initialState: GenresState = {
+const initialState: FilmsState = {
   data: [],
   error: null,
   loading: false,
 }
 
-const genresReducer = (
+const filmsReducer = (
   state = initialState,
-  action: GenresActions
-): GenresState => {
+  action: FilmsActions
+): FilmsState => {
   switch (action.type) {
-    case genresTypes.FETCH_GENRES_REQUEST:
+    case filmsTypes.FETCH_FILMS_REQUEST:
       return {
         ...state,
         loading: true,
       }
-    case genresTypes.FETCH_GENRES_SUCCESS:
+    case filmsTypes.FETCH_FILMS_SUCCESS:
       return {
         ...state,
         loading: false,
         data: action.payload.data,
       }
-    case genresTypes.FETCH_GENRES_FAILURE:
+    case filmsTypes.FETCH_FILMS_FAILURE:
       return {
         ...state,
         loading: false,
@@ -39,4 +39,4 @@ const genresReducer = (
   }
 }
 
-export { genresReducer }
+export { filmsReducer }

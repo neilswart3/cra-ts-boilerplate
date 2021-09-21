@@ -10,7 +10,7 @@ function* fetchGenres() {
 
     yield put(
       fetchGenresSuccess({
-        genres: res.data.Genres,
+        data: res.data.Genres,
       })
     )
   } catch (error) {

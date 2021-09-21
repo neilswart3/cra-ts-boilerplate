@@ -1,10 +1,10 @@
 import React from 'react'
 import { useLocation, useHistory } from 'react-router-dom'
 import { BottomNavigationAction } from '@material-ui/core'
-import { navItems } from './helpers'
+import { navItems } from 'src/lib'
 import Styled from './styles'
 
-type Value = '/' | '/meals' | '/inventory' | '/shopping'
+type Value = '/' | '/top-films' | '/genres' | '/upcoming' | 'favourites'
 
 const Footer: React.FC = () => {
   const { pathname } = useLocation()

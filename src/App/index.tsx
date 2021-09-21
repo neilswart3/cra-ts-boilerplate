@@ -1,6 +1,6 @@
 import React from 'react'
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
-import { Home, Inventory, Meals, Shopping } from 'src/components'
+import { Home, Genres } from 'src/components'
 import { GeneralLayout } from 'src/layouts'
 
 function App() {
@@ -8,15 +8,12 @@ function App() {
     <BrowserRouter>
       <GeneralLayout>
         <Switch>
-          <Route path="/meals">
-            <Meals />
+          <Route path="/favourites">favourites</Route>
+          <Route path="/upcoming">upcoming</Route>
+          <Route path="/genres">
+            <Genres />
           </Route>
-          <Route path="/inventory">
-            <Inventory />
-          </Route>
-          <Route path="/shopping">
-            <Shopping />
-          </Route>
+          <Route path="/top-films">top Films</Route>
           <Route path="/">
             <Home />
           </Route>

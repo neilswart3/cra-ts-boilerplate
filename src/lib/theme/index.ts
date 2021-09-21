@@ -1,6 +1,13 @@
-import { createTheme, responsiveFontSizes } from '@material-ui/core/styles'
+import {
+  createTheme,
+  responsiveFontSizes,
+  ThemeOptions,
+} from '@material-ui/core/styles'
+import { palette } from './palette'
 
-let theme = createTheme({})
+let theme = createTheme({
+  palette,
+} as ThemeOptions)
 
 theme = responsiveFontSizes(theme)
 

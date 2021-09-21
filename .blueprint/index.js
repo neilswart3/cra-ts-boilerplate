@@ -66,4 +66,6 @@ fs.readFile(`./src/${type}/index.ts`, 'utf8', function (err, data) {
   const fileContent = `${importStatements}\n${exportStatements}`
 
   fs.writeFile(`./src/${type}/index.ts`, fileContent, writeFileErrorHandler)
+
+  console.log(`${name} has been created.`)
 })

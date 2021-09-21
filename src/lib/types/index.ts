@@ -1,1 +1,1 @@
-export type { default as Test } from './test'
+export type { default as Genre } from './genre'

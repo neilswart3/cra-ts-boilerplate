@@ -1,25 +1,27 @@
 import React from 'react'
 import { compose, Dispatch } from 'redux'
 import { connect } from 'react-redux'
-import * as actions from 'src/store/actions/test'
-import { Test } from 'src/lib/types'
-import Styled from './styles'
-import { CircularProgress } from '@material-ui/core'
+import { CircularProgress, Typography } from '@material-ui/core'
+import { GenresState } from 'src/store/actions/genres/types'
+import * as actions from 'src/store/actions/genres'
 import GenreItem from './GenreItem'
+import Styled from './styles'
 
 interface ReduxDispatchProps {
   getGenres: () => void
 }
 
 interface ReduxStateProps {
-  genres: Test[]
-  loading: boolean
+  data: GenresState
 }
 
 type GenresProps = ReduxDispatchProps & ReduxStateProps
 
 const Genres: React.FC<GenresProps> = (props: GenresProps) => {
-  const { loading, genres, getGenres } = props
+  const {
+    data: { genres, loading, error },
+    getGenres,
+  } = props
 
   React.useEffect(() => {
     if (getGenres && genres.length === 0) {
@@ -34,6 +36,15 @@ const Genres: React.FC<GenresProps> = (props: GenresProps) => {
       </Styled.Loading>
     )
 
+  if (error)
+    return (
+      <Styled.Loading>
+        <Typography align="center" variant="h4">
+          An error has occured. Please try again later.
+        </Typography>
+      </Styled.Loading>
+    )
+
   return (
     <Styled.Genres>
       {genres.length > 0 &&
@@ -42,13 +53,12 @@ const Genres: React.FC<GenresProps> = (props: GenresProps) => {
   )
 }
 
-const mapStateToProps = ({ test }: any): ReduxStateProps => ({
-  genres: test.tests,
-  loading: test.loading,
+const mapStateToProps = ({ genres }: any): ReduxStateProps => ({
+  data: genres,
 })
 
 const mapDispatchToProps = (dispatch: Dispatch): ReduxDispatchProps => ({
-  getGenres: () => dispatch(actions.fetchTestRequest()),
+  getGenres: () => dispatch(actions.fetchGenresRequest()),
 })
 
 export default compose(connect(mapStateToProps, mapDispatchToProps))(Genres)

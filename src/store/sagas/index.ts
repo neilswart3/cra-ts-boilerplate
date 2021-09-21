@@ -1,6 +1,6 @@
 import { all, fork } from 'redux-saga/effects'
-import { testWatcher } from './test'
+import { genresWatcher } from './genres'
 
 export function* rootSaga() {
-  yield all([fork(testWatcher)])
+  yield all([fork(genresWatcher)])
 }

@@ -1,9 +1,10 @@
 import React from 'react'
 import { compose, Dispatch } from 'redux'
 import { connect } from 'react-redux'
-import { CircularProgress, Typography } from '@material-ui/core'
 import { GenresState } from 'src/store/actions/genres/types'
 import * as actions from 'src/store/actions/genres'
+import { ErrorMessage, Loading } from 'src/components'
+
 import GenreItem from './GenreItem'
 import Styled from './styles'
 
@@ -29,21 +30,9 @@ const Genres: React.FC<GenresProps> = (props: GenresProps) => {
     }
   }, [getGenres, genres])
 
-  if (loading)
-    return (
-      <Styled.Loading>
-        <CircularProgress />
-      </Styled.Loading>
-    )
+  if (loading) return <Loading />
 
-  if (error)
-    return (
-      <Styled.Loading>
-        <Typography align="center" variant="h4">
-          An error has occured. Please try again later.
-        </Typography>
-      </Styled.Loading>
-    )
+  if (error) return <ErrorMessage />
 
   return (
     <Styled.Genres>

@@ -7,13 +7,6 @@ const Genres = styled.div`
   grid-gap: 0.5rem;
 `
 
-const Loading = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100%;
-`
-
-const Styled = { Genres, Loading }
+const Styled = { Genres }
 
 export default Styled

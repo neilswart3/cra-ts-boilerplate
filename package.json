@@ -1,5 +1,5 @@
 {
-  "name": "film-finder",
+  "name": "cra-ts-pwa-boilerplate",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

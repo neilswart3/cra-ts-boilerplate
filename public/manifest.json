@@ -1,6 +1,6 @@
 {
-  "short_name": "Film Finder",
-  "name": "Film Finder",
+  "short_name": "cra-boilerplate",
+  "name": "CRA boilerplate",
   "icons": [
     {
       "src": "tv-icon.ico",
